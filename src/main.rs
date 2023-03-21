@@ -17,8 +17,8 @@ fn main() {
     rayon::ThreadPoolBuilder::new().num_threads(4).build_global().unwrap();
     let mut prime_nums = Primes::new();
     let a = time::Instant::now();
-    println!("{}", prime_nums.get(1_000_000_000));
-    println!("{:?}", a.elapsed());
+    println!("{}", prime_nums.get(1_000_000));
+    println!("total time: {:?}", a.elapsed());
     println!(
         "found {} consecutive prime numbers in {} iterations\nlargest number found is: {}",
         prime_nums.prime_numbers.len(),
