@@ -9,7 +9,7 @@ use std::time;
 fn main() {
     let mut prime_nums = Primes::new();
     let a = time::Instant::now();
-    println!("{}", prime_nums.get(100_000_000));
+    println!("{}", prime_nums.get(1_000_000_000));
     println!("{:?}", a.elapsed());
 }
 
@@ -36,7 +36,7 @@ impl Primes {
 }
 
 //this const was fast on my computer, you should mess around with it
-const MAX_JUMP: usize = 5;
+const MAX_JUMP: usize = 1;
 fn add_next_seg(primes: &mut Vec<usize>, iterations: &mut usize) {
     let seg_size = min(MAX_JUMP, primes.len() - *iterations - 1);
     let start = *iterations;
